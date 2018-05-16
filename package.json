@@ -2,7 +2,7 @@
   "name": "react-companies",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://react-companies.com",
+  "homepage": "https://www.react-companies.com",
   "scripts": {
     "build": "react-scripts build",
     "deploy": "gh-pages -d build",
