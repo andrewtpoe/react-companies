@@ -4,7 +4,8 @@ A curated list of companies using React in production, organized by industry.
 
 ## Adding your company
 
-We welcome the addition of any company using React in production. Please fork the repo, and submit a pull request that adheres to the following guidelines:
+We welcome the addition of any company using React in production. Please fork
+the repo, and submit a pull request that adheres to the following guidelines:
 
 * New companies should be added to the _end_ of `public/companies.json`.
 * Please check your spelling and grammar.
@@ -27,4 +28,6 @@ Thank you for your contributions!
 This project was bootstrapped with
 [Create React App](https://github.com/facebookincubator/create-react-app).
 
+Want to help?
+[Check out the this project's trello boards.](https://trello.com/reactcompanies)
 Your contributions are welcome!
