@@ -1,10 +1,22 @@
+import 'babel-polyfill';
+
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
-import App from './App';
+import App, { registerServiceWorker } from 'setup';
 
-import registerServiceWorker from './registerServiceWorker';
+function renderApp(AppComponent) {
+  render(<AppComponent />, document.getElementById('root'));
+}
 
-ReactDOM.render(<App />, document.getElementById('root'));
+renderApp(App);
+
+if (module.hot && process.env.NODE_ENV !== 'production') {
+  module.hot.accept('./setup/index.js', () => {
+    // eslint-disable-next-line global-require
+    const NewApp = require('./setup/index.js').default;
+    renderApp(NewApp);
+  });
+}
 
 registerServiceWorker();
