@@ -17,12 +17,12 @@ function TopNav() {
       </StyledTopNav.LinkList>
       <StyledTopNav.LinkList>
         <StyledTopNav.LinkListItem>
-          <StyledTopNav.Link
-            to="https://github.com/andrewtpoe/react-companies"
+          <StyledTopNav.A
+            href="https://github.com/andrewtpoe/react-companies"
             modifiers={['textWhite']}
           >
             <Icon className="fab fa-lg fa-github" />
-          </StyledTopNav.Link>
+          </StyledTopNav.A>
         </StyledTopNav.LinkListItem>
       </StyledTopNav.LinkList>
     </StyledTopNav>

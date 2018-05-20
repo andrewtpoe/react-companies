@@ -17,11 +17,6 @@ ex. `/src/components/SomeComponent/index.js`
 Briefly describe how to setup the demo env, and how to run the application in
 such a way as to observe the results of the work included in this PR.
 
-## BREAKING CHANGES
-
-Describe any _breaking changes_ here. Breaking changes will trigger a major
-version bump.
-
 ## ANY NEW DEPENDENCIES ADDED?
 
 List any new dependencies added.
