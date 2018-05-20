@@ -10,16 +10,16 @@ the repo, and submit a pull request that adheres to the following guidelines:
 * New companies should be added to the _end_ of `public/companies.json`.
 * Please check your spelling and grammar.
 * Valid fields are:
-  * companyName (required, string)
-  * industry (required, string, prefer using existing values)
-  * website (required, string, must be valid)
-  * github (optional, string, must be valid)
-  * location (optional, string)
-  * description (optional, string)
-  * jobs (array of objects)
-    * title (required, string)
-    * location (optional, string)
-    * url (optional, string, must be valid if provided.)
+  * `companyName` (required, string)
+  * `industry` (required, string, prefer using existing values)
+  * `website` (required, string, must be valid)
+  * `github` (optional, string, must be valid)
+  * `location` (optional, string)
+  * `description` (optional, string)
+  * `jobs` (array of job objects)
+    * `title` (required, string)
+    * `location` (optional, string)
+    * `url` (optional, string, must be valid if provided.)
 
 Thank you for your contributions!
 

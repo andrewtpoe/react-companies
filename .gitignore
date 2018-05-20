@@ -98,9 +98,6 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
-.env
-
 ### OSX ###
 *.DS_Store
 .AppleDouble
