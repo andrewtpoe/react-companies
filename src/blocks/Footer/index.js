@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+
 import { buildStyledComponent } from 'utils';
 
 const styles = ({ theme }) => css`
@@ -12,6 +13,4 @@ const styles = ({ theme }) => css`
   width: 100%;
 `;
 
-const Footer = buildStyledComponent('Footer', styled.nav, styles);
-
-export default Footer;
+export default buildStyledComponent('Footer', styled.footer, styles);

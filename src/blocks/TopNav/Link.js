@@ -33,7 +33,7 @@ const styles = ({ theme }) => css`
   color: inherit;
   display: flex;
   font-size: ${theme.dimensions.fontSizeLG};
-  height: 100%;
+  height: ${theme.dimensions.topNavHeight};
   padding-left: 16px;
   padding-right: 16px;
   text-decoration: none;

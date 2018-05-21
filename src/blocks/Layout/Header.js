@@ -5,7 +5,6 @@ import { buildStyledComponent } from 'utils';
 const styles = ({ theme }) => css`
   background-color: ${theme.colors.base.chrome400};
   color: ${theme.colors.base.textWhite};
-  height: ${theme.dimensions.topNavHeight};
   left: 0;
   position: fixed;
   top: 0;
