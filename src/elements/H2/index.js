@@ -5,7 +5,7 @@ import { buildStyledComponent } from 'utils';
 const modifiers = {
   borderBottom: ({ theme }) => ({
     styles: css`
-      border-bottom: 2px solid ${theme.colors.base.chrome200};
+      border-bottom: 4px solid ${theme.colors.base.chrome200};
       padding: 24px 0;
     `,
   }),
