@@ -8,6 +8,21 @@ const modifiers = {
       font-weight: 400;
     `,
   }),
+  button: ({ theme }) => ({
+    styles: css`
+      background-color: ${theme.colors.brand.primary};
+      border-bottom: none;
+      cursor: pointer;
+      font-size: ${theme.dimensions.fontSizeLG};
+      font-weight: 400;
+      padding: 16px 24px;
+
+      &:hover {
+        background-color: ${theme.colors.base.chrome000};
+        border-bottom: none;
+      }
+    `,
+  }),
   textWhite: ({ theme }) => ({
     styles: css`
       background-color: transparent;
