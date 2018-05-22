@@ -1,12 +1,17 @@
 import 'babel-polyfill';
 
 import React from 'react';
-import { render } from 'react-dom';
+import { hydrate, render } from 'react-dom';
 
 import App, { registerServiceWorker } from 'setup';
 
 function renderApp(AppComponent) {
-  render(<AppComponent />, document.getElementById('root'));
+  const rootElement = document.getElementById('root');
+  if (rootElement.hasChildNodes()) {
+    hydrate(<AppComponent />, rootElement);
+  } else {
+    render(<AppComponent />, rootElement);
+  }
 }
 
 renderApp(App);

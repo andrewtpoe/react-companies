@@ -10,23 +10,24 @@ function Home() {
   return (
     <Fragment>
       <Hero>
-        <P modifiers={['fontSizeXL', 'fontWeightLight', 'textWhite']}>
+        <P
+          modifiers={['fontSizeXL', 'fontWeightLight', 'textWhite']}
+          style={{ letterSpacing: '1px' }}
+        >
           A curated list of companies using React in production, organized by
-          industries.
+          industry.
         </P>
-        {false && (
-          <P style={{ padding: '32px 0' }}>
-            <A
-              href="https://github.com/andrewtpoe/react-companies/blob/master/README.md#adding-your-company"
-              modifiers={['button']}
-            >
-              <Span>
-                <Icon className="fab fa-lg fa-github" />
-              </Span>
-              <Span>Add Your Company</Span>
-            </A>
-          </P>
-        )}
+        <P style={{ padding: '32px 0' }}>
+          <A
+            href="https://github.com/andrewtpoe/react-companies/blob/master/README.md#adding-your-company"
+            modifiers={['button']}
+          >
+            <Span>
+              <Icon className="fab fa-lg fa-github" />
+            </Span>
+            <Span>Add Your Company</Span>
+          </A>
+        </P>
       </Hero>
       <Article>
         <H2 modifiers={['borderBottom']}>Coming Soon...</H2>

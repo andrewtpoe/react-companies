@@ -10,6 +10,8 @@ const styles = ({ theme }) => css`
   font-size: ${theme.dimensions.fontSizeLG};
   height: 100%;
   justify-content: center;
+  padding: 0 5%;
+  text-align: center;
   width: 100%;
 `;
 
