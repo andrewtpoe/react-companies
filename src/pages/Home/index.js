@@ -1,8 +1,11 @@
 import React, { Fragment } from 'react';
 
-import { Article, Grid } from 'blocks';
+import {
+  Article,
+  // Grid,
+} from 'blocks';
 
-import CompanyCard from 'components/CompanyCard';
+// import CompanyCard from 'components/CompanyCard';
 import Hero from 'components/Hero';
 
 import { A, H2, Icon, P, Span } from 'elements';
