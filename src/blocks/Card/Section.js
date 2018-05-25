@@ -25,6 +25,6 @@ const styles = ({ theme }) => css`
   padding: 8px 16px;
 `;
 
-const CardSection = buildStyledComponent('Card__Section', styled.div, styles, {
+export default buildStyledComponent('Card__Section', styled.div, styles, {
   modifiers,
 });
