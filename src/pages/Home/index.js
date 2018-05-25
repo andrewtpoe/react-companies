@@ -31,8 +31,8 @@ function Home() {
         </P>
       </Hero>
       <Article>
-        <H2 modifiers={['borderBottom']}>Recent Additions</H2>
-        <Grid>
+        <H2 modifiers={['borderBottom']}>Coming soon...</H2>
+        {/* <Grid>
           <Grid.Cell>
             <CompanyCard />
           </Grid.Cell>
@@ -42,7 +42,7 @@ function Home() {
           <Grid.Cell>
             <CompanyCard />
           </Grid.Cell>
-        </Grid>
+        </Grid> */}
       </Article>
     </Fragment>
   );
