@@ -13,6 +13,8 @@ const modifiers = {
 
 const styles = ({ theme }) => css`
   font-size: ${theme.dimensions.fontSizeXL};
+  font-weight: 400;
+  margin: 12px 0;
 `;
 
 export default buildStyledComponent('H2', styled.h2, styles, { modifiers });

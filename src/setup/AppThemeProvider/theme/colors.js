@@ -17,8 +17,7 @@ export default {
   },
   brand: {
     primary: '#61dafb',
-    secondary: '#ecfee8',
+    secondary: '#fee46e',
     tertiary: '#ebfafe',
   },
-  status: {},
 };

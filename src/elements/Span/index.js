@@ -8,6 +8,11 @@ const modifiers = {
       font-weight: 400;
     `,
   }),
+  fontSizeSM: ({ theme }) => ({
+    styles: css`
+      font-size: ${theme.dimensions.fontSizeSM};
+    `,
+  }),
 };
 
 const styles = () => css`

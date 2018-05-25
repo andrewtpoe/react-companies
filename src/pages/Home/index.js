@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 
-import { Article } from 'blocks';
+import { Article, Grid } from 'blocks';
 
+import CompanyCard from 'components/CompanyCard';
 import Hero from 'components/Hero';
 
 import { A, H2, Icon, P, Span } from 'elements';
@@ -30,8 +31,18 @@ function Home() {
         </P>
       </Hero>
       <Article>
-        <H2 modifiers={['borderBottom']}>Coming Soon...</H2>
-        <P>React Companies is currently a work in progress. Check back soon.</P>
+        <H2 modifiers={['borderBottom']}>Recent Additions</H2>
+        <Grid>
+          <Grid.Cell>
+            <CompanyCard />
+          </Grid.Cell>
+          <Grid.Cell>
+            <CompanyCard />
+          </Grid.Cell>
+          <Grid.Cell>
+            <CompanyCard />
+          </Grid.Cell>
+        </Grid>
       </Article>
     </Fragment>
   );

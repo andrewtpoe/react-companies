@@ -3,6 +3,11 @@ import styled, { css } from 'styled-components';
 import { buildStyledComponent } from 'utils';
 
 const modifiers = {
+  fontSizeSM: ({ theme }) => ({
+    styles: css`
+      font-size: ${theme.dimensions.fontSizeSM};
+    `,
+  }),
   fontSizeXL: ({ theme }) => ({
     styles: css`
       font-size: ${theme.dimensions.fontSizeXL};
@@ -13,6 +18,16 @@ const modifiers = {
       font-weight: 100;
     `,
   }),
+  short: () => ({
+    styles: css`
+      margin: 0;
+    `,
+  }),
+  textLight: ({ theme }) => ({
+    styles: css`
+      color: ${theme.colors.base.textLight};
+    `,
+  }),
   textWhite: ({ theme }) => ({
     styles: css`
       color: ${theme.colors.base.textWhite};
@@ -20,6 +35,8 @@ const modifiers = {
   }),
 };
 
-const styles = () => css``;
+const styles = () => css`
+  margin: 8px 0;
+`;
 
 export default buildStyledComponent('P', styled.p, styles, { modifiers });

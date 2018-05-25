@@ -1,7 +1,9 @@
 import Article from './Article';
+import Card from './Card';
 import Footer from './Footer';
+import Grid from './Grid';
 import Hero from './Hero';
 import Layout from './Layout';
 import TopNav from './TopNav';
 
-export { Article, Footer, Hero, Layout, TopNav };
+export { Article, Card, Footer, Grid, Hero, Layout, TopNav };

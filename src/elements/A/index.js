@@ -23,6 +23,11 @@ const modifiers = {
       }
     `,
   }),
+  fontSizeSM: ({ theme }) => ({
+    styles: css`
+      font-size: ${theme.dimensions.fontSizeSM};
+    `,
+  }),
   textWhite: ({ theme }) => ({
     styles: css`
       background-color: transparent;
