@@ -5,6 +5,17 @@ import { RestLink } from 'apollo-link-rest';
 // setup your `RestLink` with your endpoint
 const link = new RestLink({
   uri: process.env.REACT_APP_API_URL,
+  typePatcher: {
+    Company: data => {
+      if (data.jobs != null) {
+        data.jobs = data.jobs.map(job => ({
+          __typename: 'Job',
+          ...job,
+        }));
+      }
+      return data;
+    },
+  },
 });
 
 // setup your client

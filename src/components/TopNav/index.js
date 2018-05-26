@@ -14,6 +14,11 @@ function TopNav() {
             React Companies
           </StyledTopNav.Link>
         </StyledTopNav.LinkListItem>
+        <StyledTopNav.LinkListItem>
+          <StyledTopNav.Link to="/hiring" modifiers={['textWhite']}>
+            Hiring
+          </StyledTopNav.Link>
+        </StyledTopNav.LinkListItem>
       </StyledTopNav.LinkList>
       <StyledTopNav.LinkList>
         <StyledTopNav.LinkListItem>

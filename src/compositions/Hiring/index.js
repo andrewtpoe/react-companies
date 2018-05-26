@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import { isEmpty } from 'lodash';
 import React from 'react';
 import { Query } from 'react-apollo';
 
@@ -6,14 +7,19 @@ import { Grid } from 'blocks';
 
 import CompanyCard from 'components/CompanyCard';
 
-function getRecentlyAddedCompanies(companies) {
-  return companies.slice(-8).reverse();
+function getHiringCompanies(companies) {
+  return companies.reduce((acc, company) => {
+    if (isEmpty(company.jobs)) {
+      return acc;
+    }
+    return acc.concat(company);
+  }, []);
 }
 
-function RecentlyAdded({ companies }) {
+function Hiring({ companies }) {
   return (
     <Grid>
-      {getRecentlyAddedCompanies(companies).map(company => (
+      {getHiringCompanies(companies).map(company => (
         <Grid.Cell key={company.companyName}>
           <CompanyCard company={company} />
         </Grid.Cell>
@@ -24,7 +30,7 @@ function RecentlyAdded({ companies }) {
 
 const companiesQuery = gql`
   query companies {
-    companies @rest(type: "[Company]", path: "companies.json") {
+    companies @rest(type: "Company", path: "companies.json") {
       companyName
       industry
       website
@@ -39,20 +45,20 @@ const companiesQuery = gql`
 `;
 
 /**
- * A RecentlyAdded Component wrapped in a GraphQL Query
+ * A Hiring Component wrapped in a GraphQL Query
  *
  * @param {object} componentProps The props provided to the component
- * @returns A RecentlyAdded Component wrapped in a GraphQL Query
+ * @returns A Hiring Component wrapped in a GraphQL Query
  */
-function RecentlyAddedWithQuery(componentProps) {
+function HiringWithQuery(componentProps) {
   return (
     <Query query={companiesQuery}>
       {queryProps => {
         const { data: { companies = [] } = {} } = queryProps;
-        return <RecentlyAdded {...componentProps} companies={companies} />;
+        return <Hiring {...componentProps} companies={companies} />;
       }}
     </Query>
   );
 }
 
-export default RecentlyAddedWithQuery;
+export default HiringWithQuery;

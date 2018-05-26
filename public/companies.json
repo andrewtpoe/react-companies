@@ -7,5 +7,20 @@
     "location": "Glen Allen, VA, USA",
     "description":
       "Decisiv is a rapidly growing industry leader in the asset management and service supply chain marketplace. We use React and React Native in our suite of client applications."
+  },
+  {
+    "companyName": "Airbnb",
+    "industry": "Lodging",
+    "website": "https://www.airbnb.com",
+    "github": "https://github.com/airbnb",
+    "location": "San Fancisco, CA, USA",
+    "description":
+      "Unforgettable trips start with Airbnb. Find adventures nearby or in faraway places and access unique homes, experiences, and places around the world.",
+    "jobs": [
+      {
+        "title": "Software Engineer, Frontend",
+        "url": "https://www.airbnb.com/careers/departments/position/2287"
+      }
+    ]
   }
 ]
