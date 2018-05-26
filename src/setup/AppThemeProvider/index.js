@@ -11,7 +11,6 @@ export class AppThemeProvider extends Component {
       colors: PropTypes.shape({
         base: PropTypes.object.isRequired,
         brand: PropTypes.object.isRequired,
-        status: PropTypes.object.isRequired,
       }).isRequired,
       dimensions: PropTypes.object.isRequired,
       fonts: PropTypes.shape().isRequired,

@@ -1,12 +1,10 @@
 import React, { Fragment } from 'react';
 
-import {
-  Article,
-  // Grid,
-} from 'blocks';
+import { Article } from 'blocks';
 
-// import CompanyCard from 'components/CompanyCard';
 import Hero from 'components/Hero';
+
+import RecentlyAdded from 'compositions/RecentlyAdded';
 
 import { A, H2, Icon, P, Span } from 'elements';
 
@@ -34,18 +32,8 @@ function Home() {
         </P>
       </Hero>
       <Article>
-        <H2 modifiers={['borderBottom']}>Coming soon...</H2>
-        {/* <Grid>
-          <Grid.Cell>
-            <CompanyCard />
-          </Grid.Cell>
-          <Grid.Cell>
-            <CompanyCard />
-          </Grid.Cell>
-          <Grid.Cell>
-            <CompanyCard />
-          </Grid.Cell>
-        </Grid> */}
+        <H2 modifiers={['borderBottom']}>Recent Additions</H2>
+        <RecentlyAdded />
       </Article>
     </Fragment>
   );

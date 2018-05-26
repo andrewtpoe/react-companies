@@ -18,7 +18,6 @@ the repo, and submit a pull request that adheres to the following guidelines:
   * `description` (optional, string)
   * `jobs` (array of job objects)
     * `title` (required, string)
-    * `location` (optional, string)
     * `url` (optional, string, must be valid if provided.)
 
 Thank you for your contributions!
