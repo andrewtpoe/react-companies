@@ -1,58 +1,57 @@
+import { isEmpty } from 'lodash';
 import React from 'react';
 
 import { Card } from 'blocks';
 
 import { A, H3, Icon, P, Span } from 'elements';
 
-function CompanyCard() {
+function CompanyCard({ company }) {
+  const isHiring = !isEmpty(company.jobs);
   return (
     <Card>
-      <Card.Flag>
-        <Span>Hiring</Span>
-      </Card.Flag>
+      {isHiring && (
+        <Card.Flag>
+          <Span>Hiring</Span>
+        </Card.Flag>
+      )}
       <Card.Section modifiers={['tall']}>
-        <H3>Company Name</H3>
+        <H3>{company.companyName}</H3>
       </Card.Section>
       <Card.Divider />
       <Card.Section>
         <P modifiers={['short', 'textLight']}>
           <Icon className="fas fa-cogs" modifiers={['padRight']} />
-          <Span modifiers={['fontSizeSM']}>Industry</Span>
+          <Span modifiers={['fontSizeSM']}>{company.industry}</Span>
         </P>
         <P modifiers={['short', 'textLight']}>
           <Icon className="fas fa-map-marker-alt" modifiers={['padRight']} />
-          <Span modifiers={['fontSizeSM']}>Some City, SC, USA</Span>
+          <Span modifiers={['fontSizeSM']}>{company.location}</Span>
         </P>
         <P modifiers={['short', 'textLight']}>
           <Icon className="fas fa-globe" modifiers={['padRight']} />
-          <A href="/" modifiers={['fontSizeSM']}>
-            company-website.com
+          <A href={company.website} modifiers={['fontSizeSM']}>
+            {company.website}
           </A>
         </P>
         <P modifiers={['short', 'textLight']}>
           <Icon className="fab fa-github" modifiers={['padRight']} />
-          <A href="/" modifiers={['fontSizeSM']}>
+          <A href={company.github} modifiers={['fontSizeSM']}>
             GitHub
           </A>
         </P>
-        <P modifiers={['short', 'textLight']}>
-          <Icon className="fas fa-briefcase" modifiers={['padRight']} />
-          <A href="/" modifiers={['fontSizeSM']}>
-            Job at Company
-          </A>
-        </P>
+        {isHiring &&
+          (company.jobs || []).map(job => (
+            <P key={job.title} modifiers={['short', 'textLight']}>
+              <Icon className="fas fa-briefcase" modifiers={['padRight']} />
+              <A href={job.url} modifiers={['fontSizeSM']}>
+                {job.title}
+              </A>
+            </P>
+          ))}
       </Card.Section>
       <Card.Divider />
       <Card.Section modifiers={['flex_1', 'scrollY']}>
-        <P modifiers={['fontSizeSM', 'textLight']}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </P>
+        <P modifiers={['fontSizeSM', 'textLight']}>{company.description}</P>
       </Card.Section>
     </Card>
   );
