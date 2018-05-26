@@ -40,10 +40,8 @@ const companiesQuery = gql`
  * @property {object} queryProps.data the data returned from the query
  * @returns RecentlyAdded Component
  */
-export const buildQueryChild = curry((componentProps, queryProps) => {
-  const {
-    data: { companies = [] },
-  } = queryProps;
+export const buildQueryChild = curry((componentProps, queryProps = {}) => {
+  const { data: { companies = [] } = {} } = queryProps;
   return <RecentlyAdded {...componentProps} companies={companies} />;
 });
 
