@@ -13,6 +13,7 @@ function Footer() {
         <A
           href="https://github.com/andrewtpoe"
           modifiers={['bold', 'textWhite']}
+          type="_blank"
         >
           @andrewtpoe
         </A>
