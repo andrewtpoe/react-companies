@@ -8,9 +8,10 @@ import { Grid } from 'blocks';
 import CompanyCard from 'components/CompanyCard';
 
 function RecentlyAdded({ companies }) {
+  const lastCompanies = companies.slice(-8).reverse();
   return (
     <Grid>
-      {companies.slice(-8).map(company => (
+      {lastCompanies.map(company => (
         <Grid.Cell key={company.companyName}>
           <CompanyCard company={company} />
         </Grid.Cell>
