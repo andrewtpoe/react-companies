@@ -14,18 +14,15 @@
     "build": "react-scripts build",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
-    "postbuild": "react-snap",
     "precommit": "lint-staged",
     "predeploy": "npm run build",
-    "prettier": "prettier --ignore-path ./.eslintignore --write {src,public}/**/*.{css,js,json,md}",
+    "prettier":
+      "prettier --ignore-path ./.eslintignore --write {src,public}/**/*.{css,js,json,md}",
     "start": "react-scripts start",
     "test": "react-scripts test --env=jsdom"
   },
   "lint-staged": {
-    "*.js": [
-      "prettier",
-      "git add"
-    ]
+    "*.js": ["prettier", "git add"]
   },
   "inlineCss": true,
   "minifyHtml": {
