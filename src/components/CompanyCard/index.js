@@ -29,13 +29,13 @@ function CompanyCard({ company }) {
         </P>
         <P modifiers={['short', 'textLight']}>
           <Icon className="fas fa-globe" modifiers={['padRight']} />
-          <A href={company.website} modifiers={['fontSizeSM']}>
+          <A href={company.website} modifiers={['fontSizeSM']} target="new">
             {company.website}
           </A>
         </P>
         <P modifiers={['short', 'textLight']}>
           <Icon className="fab fa-github" modifiers={['padRight']} />
-          <A href={company.github} modifiers={['fontSizeSM']}>
+          <A href={company.github} modifiers={['fontSizeSM']} target="new">
             GitHub
           </A>
         </P>
@@ -43,7 +43,7 @@ function CompanyCard({ company }) {
           (company.jobs || []).map(job => (
             <P key={job.title} modifiers={['short', 'textLight']}>
               <Icon className="fas fa-briefcase" modifiers={['padRight']} />
-              <A href={job.url} modifiers={['fontSizeSM']}>
+              <A href={job.url} modifiers={['fontSizeSM']} target="new">
                 {job.title}
               </A>
             </P>

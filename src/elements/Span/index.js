@@ -11,6 +11,7 @@ const modifiers = {
   fontSizeSM: ({ theme }) => ({
     styles: css`
       font-size: ${theme.dimensions.fontSizeSM};
+      line-height: calc(${theme.dimensions.fontSizeSM} * 1.25);
     `,
   }),
 };
