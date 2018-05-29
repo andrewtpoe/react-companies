@@ -15,6 +15,11 @@ function TopNav() {
           </StyledTopNav.Link>
         </StyledTopNav.LinkListItem>
         <StyledTopNav.LinkListItem>
+          <StyledTopNav.Link to="/industries" modifiers={['textWhite']}>
+            Industries
+          </StyledTopNav.Link>
+        </StyledTopNav.LinkListItem>
+        <StyledTopNav.LinkListItem>
           <StyledTopNav.Link to="/hiring" modifiers={['textWhite']}>
             Hiring
           </StyledTopNav.Link>

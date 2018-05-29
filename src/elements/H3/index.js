@@ -2,7 +2,20 @@ import styled, { css } from 'styled-components';
 
 import { buildStyledComponent } from 'utils';
 
-const modifiers = {};
+const modifiers = {
+  borderBottom: ({ theme }) => ({
+    styles: css`
+      border-bottom: 2px solid ${theme.colors.base.chrome200};
+      padding: 16px 0;
+    `,
+  }),
+  pad: () => ({
+    styles: css`
+      padding-left: 4px;
+      padding-right: 4px;
+    `,
+  }),
+};
 
 const styles = ({ theme }) => css`
   font-size: ${theme.dimensions.fontSizeLG};
