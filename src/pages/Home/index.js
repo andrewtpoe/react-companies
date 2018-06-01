@@ -24,7 +24,7 @@ function Home() {
         <P modifiers={['tall']}>
           <A
             href="https://github.com/andrewtpoe/react-companies/blob/master/README.md#adding-your-company"
-            modifiers={['button']}
+            modifiers={['button', 'fontSizeLG']}
             style={{ display: 'inline-block' }}
           >
             <Span>

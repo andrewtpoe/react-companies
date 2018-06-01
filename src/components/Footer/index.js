@@ -7,7 +7,7 @@ import { A, P, Span } from 'elements';
 function Footer() {
   return (
     <StyledFooter>
-      <P>
+      <P modifiers={['fontSizeLG']}>
         <Span modifiers={['bold']}>React Companies</Span>
         is maintained by
         <A

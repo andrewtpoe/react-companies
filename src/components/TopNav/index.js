@@ -1,42 +1,105 @@
-import React from 'react';
+import { compact, throttle } from 'lodash';
+import React, { Component } from 'react';
 
 import { TopNav as StyledTopNav } from 'blocks';
 
-import { Icon, Logo } from 'elements';
+import { H1, Icon, Logo } from 'elements';
 
-function TopNav() {
-  return (
-    <StyledTopNav>
-      <StyledTopNav.LinkList>
-        <StyledTopNav.LinkListItem>
-          <StyledTopNav.Link to="/" modifiers={['bold', 'fontSizeXL']}>
-            <Logo modifiers={['padRight']} />
-            React Companies
-          </StyledTopNav.Link>
-        </StyledTopNav.LinkListItem>
-        <StyledTopNav.LinkListItem>
-          <StyledTopNav.Link to="/industries" modifiers={['textWhite']}>
-            Industries
-          </StyledTopNav.Link>
-        </StyledTopNav.LinkListItem>
-        <StyledTopNav.LinkListItem>
-          <StyledTopNav.Link to="/hiring" modifiers={['textWhite']}>
-            Hiring
-          </StyledTopNav.Link>
-        </StyledTopNav.LinkListItem>
-      </StyledTopNav.LinkList>
-      <StyledTopNav.LinkList>
-        <StyledTopNav.LinkListItem>
-          <StyledTopNav.A
-            href="https://github.com/andrewtpoe/react-companies"
-            modifiers={['textWhite']}
-          >
-            <Icon className="fab fa-lg fa-github" />
-          </StyledTopNav.A>
-        </StyledTopNav.LinkListItem>
-      </StyledTopNav.LinkList>
-    </StyledTopNav>
-  );
+const DEBOUNCE_TIME_MS = 250;
+
+class TopNav extends Component {
+  state = { showLinks: false };
+
+  componentWillMount() {
+    this.resizeEventListener = throttle(
+      this.resizeEventHandler,
+      DEBOUNCE_TIME_MS,
+    );
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.resizeEventListener);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resizeEventListener);
+  }
+
+  resizeEventHandler = () => {
+    if (this.state.showLinks && window.innerWidth >= 768) {
+      this.setState({ showLinks: false });
+    }
+  };
+
+  toggleShowLinks = () => {
+    this.setState({ showLinks: !this.state.showLinks });
+  };
+
+  render() {
+    const showLinks = this.state.showLinks;
+
+    return (
+      <StyledTopNav modifiers={compact([showLinks && 'height100'])}>
+        <StyledTopNav.LinkList>
+          <StyledTopNav.LinkListItem>
+            <StyledTopNav.Link
+              to="/"
+              modifiers={['bold', 'fontSizeXL']}
+              onClick={() => this.setState({ showLinks: false })}
+            >
+              <Logo modifiers={['padRight']} />
+              <H1>React Companies</H1>
+            </StyledTopNav.Link>
+          </StyledTopNav.LinkListItem>
+          <StyledTopNav.LinkListItem>
+            <StyledTopNav.Link
+              to="/industries"
+              modifiers={['textWhite']}
+              onClick={() => this.setState({ showLinks: false })}
+            >
+              Industries
+            </StyledTopNav.Link>
+          </StyledTopNav.LinkListItem>
+          <StyledTopNav.LinkListItem>
+            <StyledTopNav.Link
+              to="/hiring"
+              modifiers={['textWhite']}
+              onClick={() => this.setState({ showLinks: false })}
+            >
+              Hiring
+            </StyledTopNav.Link>
+          </StyledTopNav.LinkListItem>
+          <StyledTopNav.LinkListItem modifiers={['screenXSOnly']}>
+            <StyledTopNav.A
+              href="https://github.com/andrewtpoe/react-companies"
+              modifiers={['textWhite']}
+              onClick={() => this.setState({ showLinks: false })}
+            >
+              GitHub
+            </StyledTopNav.A>
+          </StyledTopNav.LinkListItem>
+        </StyledTopNav.LinkList>
+        <StyledTopNav.LinkList>
+          <StyledTopNav.LinkListItem modifiers={['screenSMUp']}>
+            <StyledTopNav.A
+              href="https://github.com/andrewtpoe/react-companies"
+              modifiers={['textWhite']}
+            >
+              <Icon className="fab fa-lg fa-github" />
+            </StyledTopNav.A>
+          </StyledTopNav.LinkListItem>
+          <StyledTopNav.LinkListItem modifiers={['middle', 'screenXSOnly']}>
+            <StyledTopNav.Button
+              modifiers={['textWhite']}
+              onClick={this.toggleShowLinks}
+            >
+              <Icon className="fas fa-bars" />
+            </StyledTopNav.Button>
+          </StyledTopNav.LinkListItem>
+        </StyledTopNav.LinkList>
+      </StyledTopNav>
+    );
+  }
 }
 
 export default TopNav;

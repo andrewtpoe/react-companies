@@ -38,8 +38,28 @@ const styles = ({ theme }) => css`
   padding-right: 16px;
   text-decoration: none;
 
-  &:hover {
-    background-color: ${theme.colors.base.chrome200};
+  @media all and (${theme.dimensions.screenSM}) {
+    &:hover {
+      background-color: ${theme.colors.base.chrome200};
+    }
+  }
+
+  @media all and (${theme.dimensions.screenMD}) {
+    &:hover {
+      background-color: ${theme.colors.base.chrome200};
+    }
+  }
+
+  @media all and (${theme.dimensions.screenLG}) {
+    &:hover {
+      background-color: ${theme.colors.base.chrome200};
+    }
+  }
+
+  @media all and (${theme.dimensions.screenXL}) {
+    &:hover {
+      background-color: ${theme.colors.base.chrome200};
+    }
   }
 `;
 
