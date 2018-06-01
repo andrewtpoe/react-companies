@@ -1,11 +1,11 @@
-import gql from 'graphql-tag';
 import { kebabCase } from 'lodash';
 import React from 'react';
-import { Query } from 'react-apollo';
 
 import { Grid } from 'blocks';
 
 import CompanyCard from 'components/CompanyCard';
+
+import { CompaniesContextConsumer } from 'compositions/CompaniesContext';
 
 function getIndustryCompanies(industry, companies) {
   return companies.reduce((acc, company) => {
@@ -33,38 +33,14 @@ function IndustryCompanies({
   );
 }
 
-const companiesQuery = gql`
-  query companies {
-    companies @rest(type: "Company", path: "companies.json") {
-      companyName
-      industry
-      website
-      github
-      location
-      description
-      jobs {
-        title
-        url
-      }
-    }
-  }
-`;
-
-/**
- * A IndustryCompanies Component wrapped in a GraphQL Query
- *
- * @param {object} componentProps The props provided to the component
- * @returns A IndustryCompanies Component wrapped in a GraphQL Query
- */
-function IndustryCompaniesWithQuery(componentProps) {
+function IndustryCompaniesWithData(componentProps) {
   return (
-    <Query query={companiesQuery}>
-      {queryProps => {
-        const { data: { companies = [] } = {} } = queryProps;
-        return <IndustryCompanies {...componentProps} companies={companies} />;
-      }}
-    </Query>
+    <CompaniesContextConsumer>
+      {({ companies }) => (
+        <IndustryCompanies {...componentProps} companies={companies} />
+      )}
+    </CompaniesContextConsumer>
   );
 }
 
-export default IndustryCompaniesWithQuery;
+export default IndustryCompaniesWithData;

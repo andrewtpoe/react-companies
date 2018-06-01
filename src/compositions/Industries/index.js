@@ -1,7 +1,7 @@
-import gql from 'graphql-tag';
 import { kebabCase, toLower, toUpper } from 'lodash';
 import React from 'react';
-import { Query } from 'react-apollo';
+
+import { CompaniesContextConsumer } from 'compositions/CompaniesContext';
 
 import { H3, Li, Link, Ul } from 'elements';
 
@@ -52,29 +52,14 @@ function Industries({ companies }) {
   );
 }
 
-const companiesQuery = gql`
-  query companies {
-    companies @rest(type: "Company", path: "companies.json") {
-      industry
-    }
-  }
-`;
-
-/**
- * A Industries Component wrapped in a GraphQL Query
- *
- * @param {object} componentProps The props provided to the component
- * @returns A Industries Component wrapped in a GraphQL Query
- */
-function HiringWithQuery(componentProps) {
+function IndustriesWithData(componentProps) {
   return (
-    <Query query={companiesQuery}>
-      {queryProps => {
-        const { data: { companies = [] } = {} } = queryProps;
-        return <Industries {...componentProps} companies={companies} />;
-      }}
-    </Query>
+    <CompaniesContextConsumer>
+      {({ companies }) => (
+        <Industries {...componentProps} companies={companies} />
+      )}
+    </CompaniesContextConsumer>
   );
 }
 
-export default HiringWithQuery;
+export default IndustriesWithData;

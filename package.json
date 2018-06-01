@@ -16,31 +16,18 @@
     "eject": "react-scripts eject",
     "precommit": "lint-staged",
     "predeploy": "npm run build",
-    "prettier": "prettier --ignore-path ./.eslintignore --write {src,public}/**/*.{css,js,json,md}",
+    "prettier":
+      "prettier --ignore-path ./.eslintignore --write {src,public}/**/*.{css,js,json,md}",
     "start": "react-scripts start",
     "test": "react-scripts test --env=jsdom"
   },
   "lint-staged": {
-    "*.js": [
-      "prettier",
-      "git add"
-    ]
-  },
-  "inlineCss": true,
-  "minifyHtml": {
-    "collapseWhitespace": true,
-    "removeComments": true
+    "*.js": ["prettier", "git add"]
   },
   "dependencies": {
-    "apollo-cache-inmemory": "^1.2.1",
-    "apollo-client": "^2.3.1",
-    "apollo-link-rest": "^0.3.0",
     "babel-polyfill": "^6.26.0",
-    "graphql": "^0.13.2",
-    "graphql-tag": "^2.9.2",
     "polished": "^1.9.2",
     "react": "^16.3.2",
-    "react-apollo": "^2.1.4",
     "react-dom": "^16.3.2",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",

@@ -1,11 +1,11 @@
-import gql from 'graphql-tag';
 import { isEmpty } from 'lodash';
 import React from 'react';
-import { Query } from 'react-apollo';
 
 import { Grid } from 'blocks';
 
 import CompanyCard from 'components/CompanyCard';
+
+import { CompaniesContextConsumer } from 'compositions/CompaniesContext';
 
 function getHiringCompanies(companies) {
   return companies.reduce((acc, company) => {
@@ -28,38 +28,12 @@ function Hiring({ companies }) {
   );
 }
 
-const companiesQuery = gql`
-  query companies {
-    companies @rest(type: "Company", path: "companies.json") {
-      companyName
-      industry
-      website
-      github
-      location
-      description
-      jobs {
-        title
-        url
-      }
-    }
-  }
-`;
-
-/**
- * A Hiring Component wrapped in a GraphQL Query
- *
- * @param {object} componentProps The props provided to the component
- * @returns A Hiring Component wrapped in a GraphQL Query
- */
-function HiringWithQuery(componentProps) {
+function HiringWithData(componentProps) {
   return (
-    <Query query={companiesQuery}>
-      {queryProps => {
-        const { data: { companies = [] } = {} } = queryProps;
-        return <Hiring {...componentProps} companies={companies} />;
-      }}
-    </Query>
+    <CompaniesContextConsumer>
+      {({ companies }) => <Hiring {...componentProps} companies={companies} />}
+    </CompaniesContextConsumer>
   );
 }
 
-export default HiringWithQuery;
+export default HiringWithData;
