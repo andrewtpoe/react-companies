@@ -39,6 +39,7 @@ const companiesQuery = gql`
       companyName
       industry
       website
+      github
       location
       description
       jobs {
