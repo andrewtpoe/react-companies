@@ -22,5 +22,14 @@
         "url": "https://www.airbnb.com/careers/departments/position/2287"
       }
     ]
+  },
+  {
+    "companyName": "El Universo",
+    "industry": "News",
+    "website": "https://www.eluniverso.com",
+    "github": "https://github.com/eluniverso",
+    "location": "Guayaquil, Ecuador",
+    "description":
+      "Noticias de Ecuador y el mundo en eluniverso.com. Revisa las principales noticias nacionales e internacionales: opinión, política, economía, internacional, deportes, entretenimiento y Guayaquil. Lea las últimas noticias de Ecuador."
   }
 ]
