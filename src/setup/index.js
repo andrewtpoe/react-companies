@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { ApolloProvider } from 'react-apollo';
 import { BrowserRouter } from 'react-router-dom';
+
+import { CompaniesContextProvider } from 'compositions/CompaniesContext';
 
 import AppThemeProvider from './AppThemeProvider';
 import registerServiceWorker from './serviceWorker';
 
 import Routes from 'routes';
-
-import apolloClient from './apolloClient';
 
 /**
  * SetupComponent is exported for use in testing. This component
@@ -17,11 +16,11 @@ import apolloClient from './apolloClient';
  */
 function SetupComponent({ children }) {
   return (
-    <ApolloProvider client={apolloClient}>
-      <AppThemeProvider>
+    <AppThemeProvider>
+      <CompaniesContextProvider>
         <BrowserRouter>{children}</BrowserRouter>
-      </AppThemeProvider>
-    </ApolloProvider>
+      </CompaniesContextProvider>
+    </AppThemeProvider>
   );
 }
 

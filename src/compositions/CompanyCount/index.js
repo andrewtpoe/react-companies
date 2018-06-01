@@ -1,6 +1,6 @@
-import gql from 'graphql-tag';
 import React from 'react';
-import { Query } from 'react-apollo';
+
+import { CompaniesContextConsumer } from 'compositions/CompaniesContext';
 
 import { P, Span } from 'elements';
 
@@ -17,29 +17,14 @@ function CompanyCount({ companies }) {
   );
 }
 
-const companiesQuery = gql`
-  query companies {
-    companies @rest(type: "Company", path: "companies.json") {
-      companyName
-    }
-  }
-`;
-
-/**
- * A CompanyCount Component wrapped in a GraphQL Query
- *
- * @param {object} componentProps The props provided to the component
- * @returns A CompanyCount Component wrapped in a GraphQL Query
- */
-function CompanyCountWithQuery(componentProps) {
+function CompanyCountWithData(componentProps) {
   return (
-    <Query query={companiesQuery}>
-      {queryProps => {
-        const { data: { companies = [] } = {} } = queryProps;
-        return <CompanyCount {...componentProps} companies={companies} />;
-      }}
-    </Query>
+    <CompaniesContextConsumer>
+      {({ companies }) => (
+        <CompanyCount {...componentProps} companies={companies} />
+      )}
+    </CompaniesContextConsumer>
   );
 }
 
-export default CompanyCountWithQuery;
+export default CompanyCountWithData;
