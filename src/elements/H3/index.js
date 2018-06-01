@@ -3,10 +3,10 @@ import styled, { css } from 'styled-components';
 import { buildStyledComponent } from 'utils';
 
 const modifiers = {
-  borderBottom: ({ theme }) => ({
+  light: ({ theme }) => ({
     styles: css`
-      border-bottom: 2px solid ${theme.colors.base.chrome200};
-      padding: 16px 0;
+      color: ${theme.colors.base.textLight};
+      font-weight: 200;
     `,
   }),
   pad: () => ({

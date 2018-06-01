@@ -33,10 +33,10 @@ function sortIndustries(industries) {
 function Industries({ companies }) {
   const sortedIndustryGroups = sortIndustries(groupIndustries(companies));
   return (
-    <Ul style={{ maxWidth: '50%' }}>
+    <Ul>
       {sortedIndustryGroups.map(({ label, industries }) => (
         <Li key={label}>
-          <H3 modifiers={['borderBottom', 'pad']}>{label}</H3>
+          <H3 modifiers={['light', 'pad']}>{label}</H3>
           <Ul>
             {industries.map(industry => (
               <Li key={industry}>
