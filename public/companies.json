@@ -31,5 +31,13 @@
     "location": "Guayaquil, Ecuador",
     "description":
       "Noticias de Ecuador y el mundo en eluniverso.com. Revisa las principales noticias nacionales e internacionales: opinión, política, economía, internacional, deportes, entretenimiento y Guayaquil. Lea las últimas noticias de Ecuador."
+  },
+  {
+    "companyName": "Classy",
+    "industry": "Software Development Agency",
+    "website": "https://teamclassy.xyz",
+    "github": "https://github.com/classy-xyz",
+    "location": "Hungary",
+    "description": "We deliver Classy solutions for your project."
   }
 ]
