@@ -1,18 +1,27 @@
 import styled, { css } from 'styled-components';
 
+import logo from 'assets/react-companies-logo-transparent.svg';
+
 import { buildStyledComponent } from 'utils';
 
 const modifiers = {
   padRight: () => ({
     styles: css`
-      padding-right: 8px;
+      margin-right: 8px;
     `,
   }),
 };
 
-const styles = () => css``;
+const styles = () => css`
+  height: 56px;
+  width: 56px;
+`;
 
-export default buildStyledComponent('Logo', styled.i, styles, {
-  className: 'fab fa-2x fa-react',
-  modifiers,
-});
+export default buildStyledComponent(
+  'Logo',
+  styled.img.attrs({ alt: 'React Companies Logo', src: logo }),
+  styles,
+  {
+    modifiers,
+  },
+);

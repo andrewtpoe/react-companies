@@ -16,13 +16,16 @@
     "eject": "react-scripts eject",
     "precommit": "lint-staged",
     "predeploy": "npm run build",
-    "prettier":
-      "prettier --ignore-path ./.eslintignore --write {src,public}/**/*.{css,js,json,md}",
+    "prettier": "prettier --ignore-path ./.eslintignore --write {src,public}/**/*.{css,js,json,md}",
+    "postbuild": "react-snap",
     "start": "react-scripts start",
     "test": "react-scripts test --env=jsdom"
   },
   "lint-staged": {
-    "*.js": ["prettier", "git add"]
+    "*.js": [
+      "prettier",
+      "git add"
+    ]
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",

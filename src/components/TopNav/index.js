@@ -74,6 +74,8 @@ class TopNav extends Component {
               href="https://github.com/andrewtpoe/react-companies"
               modifiers={['textWhite']}
               onClick={() => this.setState({ showLinks: false })}
+              rel="noopener"
+              type="_blank"
             >
               GitHub
             </StyledTopNav.A>
@@ -84,12 +86,15 @@ class TopNav extends Component {
             <StyledTopNav.A
               href="https://github.com/andrewtpoe/react-companies"
               modifiers={['textWhite']}
+              rel="noopener"
+              type="_blank"
             >
               <Icon className="fab fa-lg fa-github" />
             </StyledTopNav.A>
           </StyledTopNav.LinkListItem>
           <StyledTopNav.LinkListItem modifiers={['middle', 'screenXSOnly']}>
             <StyledTopNav.Button
+              aria-label="Toggle Menu"
               modifiers={['textWhite']}
               onClick={this.toggleShowLinks}
             >

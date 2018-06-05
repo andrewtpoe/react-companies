@@ -17,7 +17,7 @@ function Home() {
           modifiers={['fontSizeXL', 'fontWeightLight', 'tall', 'textWhite']}
           style={{ letterSpacing: '1px' }}
         >
-          A curated list of companies using React in production, organized by
+          A curated list of companies using React JS in production, organized by
           industry.
         </P>
         <CompanyCount />
@@ -25,7 +25,9 @@ function Home() {
           <A
             href="https://github.com/andrewtpoe/react-companies/blob/master/README.md#adding-your-company"
             modifiers={['button', 'fontSizeLG']}
+            rel="noopener"
             style={{ display: 'inline-block' }}
+            type="_blank"
           >
             <Span>
               <Icon className="fab fa-lg fa-github" />
