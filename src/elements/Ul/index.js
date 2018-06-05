@@ -6,7 +6,7 @@ const modifiers = {};
 
 const styles = () => css`
   list-style-type: none;
-  margin: 0;
+  margin: 8px 0;
   padding: 0;
 `;
 
