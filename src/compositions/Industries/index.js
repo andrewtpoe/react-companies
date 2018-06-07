@@ -9,7 +9,7 @@ function groupIndustries(companies) {
   return companies.reduce((acc, company) => {
     const firstLetter = toLower(company.industry[0]);
     if (acc[firstLetter]) {
-      acc[firstLetter].concat(company.industry);
+      acc[firstLetter] = acc[firstLetter].concat(company.industry);
       return acc;
     }
     acc[firstLetter] = [company.industry];
@@ -32,6 +32,7 @@ function sortIndustries(industries) {
 
 function Industries({ companies }) {
   const sortedIndustryGroups = sortIndustries(groupIndustries(companies));
+
   return (
     <Ul>
       {sortedIndustryGroups.map(({ label, industries }) => (
