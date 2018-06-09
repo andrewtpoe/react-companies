@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://www.react-companies.com",
   "engines": {
-    "node": ">=8.9.4"
+    "node": ">=8.11.2"
   },
   "repository": {
     "type": "git",
@@ -12,11 +12,15 @@
   },
   "scripts": {
     "build": "react-scripts build",
+    "build:data-file": "node ./scripts/buildDataFile.js && npm run prettier",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
+    "postbuild": "react-snap",
+    "prebuild": "npm run build:data-file",
     "precommit": "lint-staged",
     "predeploy": "npm run build",
-    "prettier": "prettier --ignore-path ./.eslintignore --write {src,public}/**/*.{css,js,json,md}",
+    "prestart": "npm run build:data-file",
+    "prettier": "prettier --ignore-path ./.eslintignore --write {*,**/**}.{css,js,json,md}",
     "start": "react-scripts start",
     "test": "react-scripts test --env=jsdom"
   },
@@ -37,7 +41,10 @@
     "styled-components-modifiers": "^1.0.1"
   },
   "devDependencies": {
+    "dayjs": "^1.6.6",
     "gh-pages": "^1.1.0",
-    "lint-staged": "^7.1.0"
+    "lint-staged": "^7.1.0",
+    "prettier": "^1.13.5",
+    "ramda": "^0.25.0"
   }
 }
