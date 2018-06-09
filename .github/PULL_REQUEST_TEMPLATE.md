@@ -25,4 +25,4 @@ List any new dependencies added.
 
 _Be sure all items are_ ✅ _before submitting a PR for review._
 
-* [ ] I rebased this branch on the `master` branch
+- [ ] I rebased this branch on the `master` branch

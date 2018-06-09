@@ -12,7 +12,7 @@ class CompaniesContextProvider extends Component {
   }
 
   getCompanies = () => {
-    fetch('/companies.json')
+    fetch('/data.json')
       .then(response => {
         if (!response.ok) {
           throw response;
