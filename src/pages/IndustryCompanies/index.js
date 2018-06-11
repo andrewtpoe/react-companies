@@ -1,4 +1,5 @@
-import { capitalize, words } from 'lodash';
+import capitalize from 'lodash.capitalize';
+import words from 'lodash.words';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 

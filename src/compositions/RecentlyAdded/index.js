@@ -1,10 +1,14 @@
 import React from 'react';
+import Loadable from 'react-loadable';
 
-import { Grid } from 'blocks';
-
-import CompanyCard from 'components/CompanyCard';
+import { Grid, Loading } from 'blocks';
 
 import { CompaniesContextConsumer } from 'compositions/CompaniesContext';
+
+const CompanyCard = Loadable({
+  loader: () => import('../../components/CompanyCard'),
+  loading: () => <Loading modifiers={['card']} />,
+});
 
 function getRecentlyAddedCompanies(companies) {
   return companies.slice(-8).reverse();

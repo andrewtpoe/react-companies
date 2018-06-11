@@ -1,4 +1,4 @@
-import { kebabCase } from 'lodash';
+import kebabCase from 'lodash.kebabcase';
 import React from 'react';
 
 import { Grid } from 'blocks';
