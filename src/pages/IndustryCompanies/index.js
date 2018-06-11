@@ -1,5 +1,6 @@
 import { capitalize, words } from 'lodash';
-import React from 'react';
+import React, { Fragment } from 'react';
+import { Helmet } from 'react-helmet';
 
 import { Article } from 'blocks';
 
@@ -13,10 +14,19 @@ function Industries({ match }) {
     .join(' ');
 
   return (
-    <Article>
-      <H2 modifiers={['borderBottom']}>{title}</H2>
-      <IndustryCompaniesDetails match={match} />
-    </Article>
+    <Fragment>
+      <Helmet>
+        <title>{`React Companies | ${title} Industry`}</title>
+        <meta
+          name="description"
+          content={`A list of companies in the ${title} industry that use React JS.`}
+        />
+      </Helmet>
+      <Article>
+        <H2 modifiers={['borderBottom']}>{title}</H2>
+        <IndustryCompaniesDetails match={match} />
+      </Article>
+    </Fragment>
   );
 }
 
