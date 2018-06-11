@@ -40,7 +40,6 @@
     "lodash.tolower": "^4.1.2",
     "lodash.toupper": "^4.1.2",
     "lodash.words": "^4.2.0",
-    "polished": "^1.9.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-helmet": "^5.2.0",
