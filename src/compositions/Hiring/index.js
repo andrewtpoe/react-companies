@@ -1,4 +1,4 @@
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash.isempty';
 import React from 'react';
 
 import { Grid } from 'blocks';

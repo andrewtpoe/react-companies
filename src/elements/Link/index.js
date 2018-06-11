@@ -1,4 +1,4 @@
-import { omit } from 'lodash';
+import omit from 'lodash.omit';
 import React from 'react';
 import { Link as BaseLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';

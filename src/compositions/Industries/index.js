@@ -1,4 +1,6 @@
-import { kebabCase, toLower, toUpper } from 'lodash';
+import kebabCase from 'lodash.kebabcase';
+import toLower from 'lodash.tolower';
+import toUpper from 'lodash.toupper';
 import React from 'react';
 
 import { CompaniesContextConsumer } from 'compositions/CompaniesContext';

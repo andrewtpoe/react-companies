@@ -12,13 +12,14 @@
   },
   "scripts": {
     "build": "react-scripts build",
-    "build:data-file": "node ./scripts/buildDataFile.js && npm run prettier",
+    "build:analyze": "source-map-explorer build/static/js/main.*",
+    "build:data-file": "node ./scripts/buildDataFile.js && yarn run prettier",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
-    "postbuild": "react-snap",
-    "precommit": "npm run build:data-file && lint-staged",
-    "predeploy": "npm run build",
-    "prestart": "npm run build:data-file",
+    "prebuild:analyze": "yarn run build",
+    "precommit": "yarn run build:data-file && lint-staged",
+    "predeploy": "yarn run build",
+    "prestart": "yarn run build:data-file",
     "prettier": "prettier --ignore-path ./.eslintignore --write {*,**/**}.{css,js,json,md}",
     "start": "react-scripts start",
     "test": "react-scripts test --env=jsdom"
@@ -30,13 +31,21 @@
     ]
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
+    "lodash.capitalize": "^4.2.1",
+    "lodash.compact": "^3.0.1",
+    "lodash.isempty": "^4.4.0",
+    "lodash.kebabcase": "^4.1.1",
+    "lodash.omit": "^4.5.0",
+    "lodash.throttle": "^4.1.1",
+    "lodash.tolower": "^4.1.2",
+    "lodash.toupper": "^4.1.2",
+    "lodash.words": "^4.2.0",
     "polished": "^1.9.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-helmet": "^5.2.0",
+    "react-loadable": "^5.4.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4",
     "styled-components": "^3.2.6",
     "styled-components-modifiers": "^1.0.1"
   },
@@ -46,6 +55,8 @@
     "husky": "^0.14.3",
     "lint-staged": "^7.1.0",
     "prettier": "^1.13.5",
-    "ramda": "^0.25.0"
+    "ramda": "^0.25.0",
+    "react-scripts": "^1.1.4",
+    "source-map-explorer": "^1.5.0"
   }
 }

@@ -1,4 +1,5 @@
-import { compact, throttle } from 'lodash';
+import compact from 'lodash.compact';
+import throttle from 'lodash.throttle';
 import React, { Component } from 'react';
 
 import { TopNav as StyledTopNav } from 'blocks';
@@ -71,6 +72,7 @@ class TopNav extends Component {
           </StyledTopNav.LinkListItem>
           <StyledTopNav.LinkListItem modifiers={['screenXSOnly']}>
             <StyledTopNav.A
+              alt="GitHub for React Companies"
               href="https://github.com/andrewtpoe/react-companies"
               modifiers={['textWhite']}
               onClick={() => this.setState({ showLinks: false })}
@@ -84,6 +86,7 @@ class TopNav extends Component {
         <StyledTopNav.LinkList>
           <StyledTopNav.LinkListItem modifiers={['screenSMUp']}>
             <StyledTopNav.A
+              alt="GitHub for React Companies"
               href="https://github.com/andrewtpoe/react-companies"
               modifiers={['textWhite']}
               rel="noopener"

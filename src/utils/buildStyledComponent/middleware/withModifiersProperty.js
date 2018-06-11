@@ -1,4 +1,4 @@
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash.isempty';
 import { styleModifierPropTypes } from 'styled-components-modifiers';
 
 import builderFinalBuilderFn from '../buildFinalBuilderFn';
