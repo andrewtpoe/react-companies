@@ -1,6 +1,10 @@
 {
   "name": "React Companies",
-  "short_name": "React Com...",
+  "description":
+    "A curated list of companies using React JS in production, organized by industry.",
+  "short_name": "React Companies",
+  "start_url": "/",
+  "orientation": "any",
   "icons": [
     {
       "src": "/android-chrome-192x192.png?v=Nm5zlXwjeJ",
