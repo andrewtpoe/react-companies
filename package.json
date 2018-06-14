@@ -49,13 +49,15 @@
     "styled-components-modifiers": "^1.0.1"
   },
   "devDependencies": {
+    "cheerio": "^0.22.0",
     "dayjs": "^1.6.6",
     "gh-pages": "^1.1.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.1.0",
+    "lodash.assign": "^4.0.9",
+    "lodash.forin": "^4.2.0",
     "prettier": "^1.13.5",
     "ramda": "^0.25.0",
-    "react-scripts": "^1.1.4",
-    "source-map-explorer": "^1.5.0"
+    "react-scripts": "^1.1.4"
   }
 }

@@ -30,3 +30,7 @@ This project was bootstrapped with
 Want to help?
 [Check out the this project's trello boards.](https://trello.com/reactcompanies)
 Your contributions are welcome!
+
+## Deployment
+
+Deploying the site can only be done by administrators.
