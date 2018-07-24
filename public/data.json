@@ -6,7 +6,14 @@
     "github": "https://github.com/Decisiv",
     "location": "Glen Allen, VA, USA",
     "description":
-      "Decisiv is a rapidly growing industry leader in the asset management and service supply chain marketplace. We use React and React Native in our suite of client applications."
+      "Decisiv is a rapidly growing industry leader in the asset management and service supply chain marketplace. We use React and React Native in our suite of client applications.",
+    "jobs": [
+      {
+        "title": "Software Engineer (Front-end JavaScript/React)",
+        "url": "https://www.decisiv.com/-software-eng",
+        "addedAt": "2018-07-24T22:32:26.715Z"
+      }
+    ]
   },
   {
     "companyName": "Airbnb",
@@ -15,14 +22,7 @@
     "github": "https://github.com/airbnb",
     "location": "San Fancisco, CA, USA",
     "description":
-      "Unforgettable trips start with Airbnb. Find adventures nearby or in faraway places and access unique homes, experiences, and places around the world.",
-    "jobs": [
-      {
-        "title": "Software Engineer, Frontend",
-        "url": "https://www.airbnb.com/careers/departments/position/2287",
-        "addedAt": "2018-06-08T23:06:42.709Z"
-      }
-    ]
+      "Unforgettable trips start with Airbnb. Find adventures nearby or in faraway places and access unique homes, experiences, and places around the world."
   },
   {
     "companyName": "El Universo",
