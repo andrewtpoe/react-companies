@@ -6,6 +6,8 @@ import { TopNav as StyledTopNav } from 'blocks';
 
 import { H1, Icon, Logo } from 'elements';
 
+import { getRootPath } from 'utils';
+
 const DEBOUNCE_TIME_MS = 250;
 
 class TopNav extends Component {
@@ -44,7 +46,7 @@ class TopNav extends Component {
         <StyledTopNav.LinkList>
           <StyledTopNav.LinkListItem>
             <StyledTopNav.Link
-              to="/"
+              to={`${getRootPath()}/`}
               modifiers={['bold', 'fontSizeXL']}
               onClick={() => this.setState({ showLinks: false })}
             >
@@ -54,7 +56,7 @@ class TopNav extends Component {
           </StyledTopNav.LinkListItem>
           <StyledTopNav.LinkListItem>
             <StyledTopNav.Link
-              to="/industries"
+              to={`${getRootPath()}/industries`}
               modifiers={['textWhite']}
               onClick={() => this.setState({ showLinks: false })}
             >
@@ -63,7 +65,7 @@ class TopNav extends Component {
           </StyledTopNav.LinkListItem>
           <StyledTopNav.LinkListItem>
             <StyledTopNav.Link
-              to="/hiring"
+              to={`${getRootPath()}/hiring`}
               modifiers={['textWhite']}
               onClick={() => this.setState({ showLinks: false })}
             >
@@ -73,7 +75,7 @@ class TopNav extends Component {
           <StyledTopNav.LinkListItem modifiers={['screenXSOnly']}>
             <StyledTopNav.A
               alt="GitHub for React Companies"
-              href="https://github.com/andrewtpoe/react-companies"
+              href="https://andrewtpoe.github.io/react-companies"
               modifiers={['textWhite']}
               onClick={() => this.setState({ showLinks: false })}
               rel="noopener"
@@ -87,7 +89,7 @@ class TopNav extends Component {
           <StyledTopNav.LinkListItem modifiers={['screenSMUp']}>
             <StyledTopNav.A
               alt="GitHub for React Companies"
-              href="https://github.com/andrewtpoe/react-companies"
+              href="https://andrewtpoe.github.io/react-companies"
               modifiers={['textWhite']}
               rel="noopener"
               type="_blank"

@@ -6,6 +6,8 @@ import { Loading } from 'blocks';
 
 import Layout from 'components/Layout';
 
+import { getRootPath } from 'utils';
+
 const Hiring = Loadable({
   loader: () => import('../pages/Hiring'),
   loading: Loading,
@@ -27,10 +29,13 @@ function Routes() {
   return (
     <Layout>
       <Switch>
-        <Route path="/hiring" component={Hiring} />
-        <Route path="/industries/:industry" component={IndustryCompanies} />
-        <Route path="/industries" component={Industries} />
-        <Route exact path="/" component={Home} />
+        <Route path={`${getRootPath()}/hiring`} component={Hiring} />
+        <Route
+          path={`${getRootPath()}/industries/:industry`}
+          component={IndustryCompanies}
+        />
+        <Route path={`${getRootPath()}/industries`} component={Industries} />
+        <Route exact path={`${getRootPath()}/`} component={Home} />
       </Switch>
     </Layout>
   );

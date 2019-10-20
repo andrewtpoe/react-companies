@@ -1,5 +1,7 @@
 import React, { Component, createContext } from 'react';
 
+import { getRootPath } from 'utils';
+
 const { Provider, Consumer: CompaniesContextConsumer } = createContext();
 
 class CompaniesContextProvider extends Component {
@@ -12,16 +14,18 @@ class CompaniesContextProvider extends Component {
   }
 
   getCompanies = () => {
-    fetch('/data.json')
+    fetch(`${getRootPath()}/data.json`)
       .then(response => {
         if (!response.ok) {
           throw response;
         }
+
         return response.json();
       })
       .then(data => {
         this.saveCompanies(data);
-      });
+      })
+      .catch(err => console.log(err));
   };
 
   saveCompanies = companies => {

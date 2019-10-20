@@ -7,6 +7,8 @@ import { CompaniesContextConsumer } from 'compositions/CompaniesContext';
 
 import { H3, Li, Link, Ul } from 'elements';
 
+import { getRootPath } from 'utils';
+
 function groupIndustries(companies) {
   return companies.reduce((acc, company) => {
     const firstLetter = toLower(company.industry[0]);
@@ -43,7 +45,7 @@ function Industries({ companies }) {
           <Ul>
             {industries.map(industry => (
               <Li key={industry}>
-                <Link to={`/industries/${kebabCase(industry)}`}>
+                <Link to={`${getRootPath()}/industries/${kebabCase(industry)}`}>
                   {industry}
                 </Link>
               </Li>
