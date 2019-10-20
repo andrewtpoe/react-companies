@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://andrewtpoe.github.io/react-companies",
-  "engines": {
-    "node": ">=8.11.2"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andrewtpoe/react-companies.git"
@@ -49,15 +46,27 @@
     "styled-components-modifiers": "^1.0.1"
   },
   "devDependencies": {
-    "cheerio": "^0.22.0",
+    "cheerio": "^1.0.0-rc.3",
     "dayjs": "^1.6.6",
-    "gh-pages": "^1.1.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.1.0",
+    "gh-pages": "^2.1.0",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
     "lodash.assign": "^4.0.9",
     "lodash.forin": "^4.2.0",
     "prettier": "^1.13.5",
-    "ramda": "^0.25.0",
-    "react-scripts": "^1.1.4"
+    "ramda": "^0.26.1",
+    "react-scripts": "^3.2.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

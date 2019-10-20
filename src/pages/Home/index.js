@@ -23,7 +23,7 @@ function Home() {
         <CompanyCount />
         <P modifiers={['tall']}>
           <A
-            href="https://github.com/andrewtpoe/react-companies/blob/master/README.md#adding-your-company"
+            href="https://andrewtpoe.github.io/react-companies/blob/master/README.md#adding-your-company"
             modifiers={['button', 'fontSizeLG']}
             rel="noopener"
             style={{ display: 'inline-block' }}

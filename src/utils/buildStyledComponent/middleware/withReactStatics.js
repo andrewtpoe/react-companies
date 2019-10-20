@@ -32,6 +32,8 @@ export default function withReactStatics(
       className: className || classNameProp || displayName,
     };
     newStyledComponent.displayName = displayName;
+
+    // eslint-disable-next-line react/forbid-foreign-prop-types
     newStyledComponent.propTypes = {
       ...StyledComponent.propTypes,
       ...propTypes,

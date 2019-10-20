@@ -1,3 +1,4 @@
 import buildStyledComponent from './buildStyledComponent';
+import getRootPath from './getRootPath';
 
-export { buildStyledComponent };
+export { buildStyledComponent, getRootPath };
