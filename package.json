@@ -2,7 +2,7 @@
   "name": "react-companies",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.react-companies.com",
+  "homepage": "https://andrewtpoe.github.io/react-companies",
   "engines": {
     "node": ">=8.11.2"
   },
